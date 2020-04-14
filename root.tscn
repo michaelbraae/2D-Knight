@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://res/Environment/Platforms/Grass Floor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://res/Environment/Platforms/Stone Floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://res/Environment/Props/Well.tscn" type="PackedScene" id=4]
+[ext_resource path="res://res/Environment/Props/Barrell.tscn" type="PackedScene" id=5]
+[ext_resource path="res://res/NPC/Dark Knight/DarkKnight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://res/Environment/Props/HangingCloth.tscn" type="PackedScene" id=7]
+[ext_resource path="res://res/Environment/Props/AxeInWood.tscn" type="PackedScene" id=8]
+[ext_resource path="res://res/Environment/Backgrounds/dusk.png" type="Texture" id=9]
+
+[node name="root" type="Node2D"]
+
+[node name="Env-Behind" type="Node2D" parent="."]
+position = Vector2( 63.6605, 161.948 )
+
+[node name="Barrell" parent="Env-Behind" instance=ExtResource( 5 )]
+
+[node name="Barrell2" parent="Env-Behind" instance=ExtResource( 5 )]
+position = Vector2( 47.7552, 0 )
+
+[node name="Barrell3" parent="Env-Behind" instance=ExtResource( 5 )]
+position = Vector2( 70.6662, 2.48436 )
+rotation = 1.5708
+
+[node name="HangingCloth" parent="Env-Behind" instance=ExtResource( 7 )]
+position = Vector2( 280.109, -7.01065 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 252.955, 159.029 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 10.9301, -38.1262 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+drag_margin_h_enabled = true
+smoothing_enabled = true
+
+[node name="Grassy-Platform" type="Node2D" parent="."]
+position = Vector2( 0, 42.4807 )
+
+[node name="Grass Floor2" parent="Grassy-Platform" instance=ExtResource( 2 )]
+position = Vector2( 216, 144 )
+
+[node name="Grass Floor4" parent="Grassy-Platform" instance=ExtResource( 2 )]
+position = Vector2( 360, 144 )
+
+[node name="Grass Floor5" parent="Grassy-Platform" instance=ExtResource( 2 )]
+position = Vector2( 504, 144 )
+
+[node name="Grass Floor3" parent="Grassy-Platform" instance=ExtResource( 2 )]
+position = Vector2( 72, 144 )
+
+[node name="Stone-Long" type="Node2D" parent="."]
+position = Vector2( 0, 42.4807 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" parent="Stone-Long" instance=ExtResource( 3 )]
+position = Vector2( 705.288, 147.171 )
+
+[node name="StaticBody2D2" parent="Stone-Long" instance=ExtResource( 3 )]
+position = Vector2( 849.078, 147.22 )
+
+[node name="Stone-Long2" type="Node2D" parent="."]
+position = Vector2( 362.671, 45.0528 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" parent="Stone-Long2" instance=ExtResource( 3 )]
+position = Vector2( 705.288, 147.171 )
+
+[node name="StaticBody2D2" parent="Stone-Long2" instance=ExtResource( 3 )]
+position = Vector2( 849.078, 147.22 )
+
+[node name="Stone-Long3" type="Node2D" parent="."]
+position = Vector2( 726.627, 45.0528 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" parent="Stone-Long3" instance=ExtResource( 3 )]
+position = Vector2( 705.288, 147.171 )
+
+[node name="StaticBody2D2" parent="Stone-Long3" instance=ExtResource( 3 )]
+position = Vector2( 849.078, 147.22 )
+
+[node name="Env-Infront" type="Node2D" parent="."]
+position = Vector2( 213.777, 149.416 )
+
+[node name="Well" parent="Env-Infront" instance=ExtResource( 4 )]
+
+[node name="StaticBody2D" parent="Env-Infront" instance=ExtResource( 8 )]
+position = Vector2( 261.218, 11.5163 )
+
+[node name="DarkKnight" parent="." instance=ExtResource( 6 )]
+position = Vector2( 785.388, 144.501 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.1, 1 )
+motion_mirroring = Vector2( 900, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( -112.329, -243.217 )
+scale = Vector2( 0.476118, 0.476118 )
+texture = ExtResource( 9 )
+centered = false
