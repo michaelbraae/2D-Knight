@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+var health = 10
 const GRAVITY = 1
 export (int) var speed = 200
 const UP = Vector2(0, -1)
@@ -8,18 +9,18 @@ var player_detected = false
 onready var animatedSprite = $AnimatedSprite
 var hit = false
 
-func setHit(wasHit):
-	hit = wasHit
-
-func printSomething():
-	print("FROM DARKKNIGHT")
+func takeHit():
+	hit = true
+	health = health - 3
+	if health - 3 > 0:
+		animatedSprite.play("takehit")
+	else:
+		animatedSprite.play("death")
 
 func _physics_process(_delta):
 	velocity = Vector2()
 	velocity.y += GRAVITY
-	if hit:
-		animatedSprite.play("takehit")
-	else:
+	if not hit:
 		if velocity.x > 0:
 			animatedSprite.flip_h = false
 			animatedSprite.play("run")
@@ -35,3 +36,9 @@ func _physics_process(_delta):
 	velocity = velocity.normalized() * speed
 	velocity = move_and_slide(velocity, UP)
 
+func _on_AnimatedSprite_animation_finished():
+	var animation = animatedSprite.get_animation()
+	if animation == "takehit":
+		hit = false
+	elif animation == "death":
+		queue_free()

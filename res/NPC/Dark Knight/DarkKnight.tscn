@@ -56,24 +56,24 @@ animations = [ {
 "name": "run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 30 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "attack1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 23 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 14 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 29 ) ],
 "loop": true,
 "name": "attack2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 33 ), ExtResource( 38 ), ExtResource( 34 ) ],
-"loop": true,
-"name": "death",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 39 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ) ],
 "loop": true,
 "name": "takehit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 30 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "attack1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 31 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 33 ), ExtResource( 38 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "death",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 43 ) ],
@@ -87,7 +87,8 @@ radius = 14.2086
 height = 17.4028
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 14.1781
+radius = 22.2612
+height = 0.57008
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 40 )
@@ -95,7 +96,7 @@ script = ExtResource( 40 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 7
+frame = 3
 speed_scale = 2.0
 playing = true
 
@@ -106,6 +107,6 @@ shape = SubResource( 2 )
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2( 0, 2.851 )
+position = Vector2( 0.471024, 5.83421 )
 shape = SubResource( 3 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
