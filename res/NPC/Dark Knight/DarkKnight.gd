@@ -7,15 +7,21 @@ const UP = Vector2(0, -1)
 var velocity = Vector2()
 var player_detected = false
 onready var animatedSprite = $AnimatedSprite
+onready var healthSprite = $HealthSprite
 var hit = false
 
-func takeHit():
+func takeHit(damage):
 	hit = true
-	health = health - 3
-	if health - 3 > 0:
+	health = health - damage
+	if health < 0:
+		health = 0
+	if health > 0:
 		animatedSprite.play("takehit")
 	else:
 		animatedSprite.play("death")
+
+func _process(_delta):
+	healthSprite.play(str(health))
 
 func _physics_process(_delta):
 	velocity = Vector2()

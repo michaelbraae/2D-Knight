@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/health-bar-15.png-2f1959096ba42870ca2396249856a0e1.stex"
+path="res://.import/2.png-168e276e70c9b12d623043595c783d79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/Misc/Health/health-bar-15.png"
-dest_files=[ "res://.import/health-bar-15.png-2f1959096ba42870ca2396249856a0e1.stex" ]
+source_file="res://res/Misc/Health/2.png"
+dest_files=[ "res://.import/2.png-168e276e70c9b12d623043595c783d79.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

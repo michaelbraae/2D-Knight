@@ -71,7 +71,7 @@ func attack():
 	var overlappingAreas = PlayerAttackBox.get_overlapping_areas()
 	if not attacking and overlappingAreas:
 		for area in overlappingAreas:
-			area.get_parent().takeHit()
+			area.get_parent().takeHit(3)
 	attacking = true
 	if animatedSprite.flip_h:
 		# warning-ignore:integer_division
