@@ -67,6 +67,11 @@ animations = [ {
 "name": "run",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 39 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "takehit",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 43 ) ],
 "loop": true,
 "name": "fall",
@@ -77,19 +82,14 @@ animations = [ {
 "name": "death",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 30 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "attack1",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 23 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 14 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 29 ) ],
 "loop": true,
 "name": "attack2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 39 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 30 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 25 ) ],
 "loop": true,
-"name": "takehit",
+"name": "attack1",
 "speed": 5.0
 } ]
 
@@ -108,9 +108,9 @@ animations = [ {
 "name": "3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 52 ) ],
+"frames": [ ExtResource( 46 ) ],
 "loop": true,
-"name": "4",
+"name": "6",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 50 ) ],
@@ -118,34 +118,9 @@ animations = [ {
 "name": "2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 48 ) ],
+"frames": [ ExtResource( 52 ) ],
 "loop": true,
-"name": "1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 47 ) ],
-"loop": true,
-"name": "0",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 53 ) ],
-"loop": true,
-"name": "8",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 54 ) ],
-"loop": true,
-"name": "9",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 44 ) ],
-"loop": true,
-"name": "5",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 46 ) ],
-"loop": true,
-"name": "6",
+"name": "4",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 45 ) ],
@@ -153,9 +128,34 @@ animations = [ {
 "name": "7",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 54 ) ],
+"loop": true,
+"name": "9",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 53 ) ],
+"loop": true,
+"name": "8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 47 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 51 ) ],
 "loop": true,
 "name": "10",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 48 ) ],
+"loop": true,
+"name": "1",
 "speed": 5.0
 } ]
 
@@ -165,7 +165,7 @@ script = ExtResource( 40 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 4
+frame = 3
 speed_scale = 2.0
 playing = true
 
@@ -183,5 +183,15 @@ shape = SubResource( 3 )
 position = Vector2( 0, -32.017 )
 scale = Vector2( 2.55068, 2.55068 )
 frames = SubResource( 4 )
-animation = "0"
+animation = "10"
+
+[node name="LedgeRayCast" type="RayCast2D" parent="."]
+position = Vector2( 25, 0 )
+enabled = true
+cast_to = Vector2( 0, 30 )
+
+[node name="SightRayCast" type="RayCast2D" parent="."]
+rotation = -1.57256
+enabled = true
+cast_to = Vector2( 0, 250 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

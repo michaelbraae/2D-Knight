@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://res/Environment/Platforms/Grass Floor.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://res/NPC/Dark Knight/DarkKnight.tscn" type="PackedScene" id=6]
 [ext_resource path="res://res/Environment/Props/HangingCloth.tscn" type="PackedScene" id=7]
 [ext_resource path="res://res/Environment/Props/AxeInWood.tscn" type="PackedScene" id=8]
-[ext_resource path="res://res/Environment/Backgrounds/dusk.png" type="Texture" id=9]
 
 [node name="root" type="Node2D"]
 
@@ -64,6 +63,54 @@ position = Vector2( 705.288, 147.171 )
 [node name="StaticBody2D2" parent="Stone-Long" instance=ExtResource( 3 )]
 position = Vector2( 849.078, 147.22 )
 
+[node name="Stone-Long4" type="Node2D" parent="."]
+position = Vector2( -987.001, -7.01936 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" parent="Stone-Long4" instance=ExtResource( 3 )]
+position = Vector2( 705.288, 147.171 )
+
+[node name="StaticBody2D2" parent="Stone-Long4" instance=ExtResource( 3 )]
+position = Vector2( 849.078, 147.22 )
+
+[node name="Stone-Long5" type="Node2D" parent="."]
+position = Vector2( -654, -137.519 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" parent="Stone-Long5" instance=ExtResource( 3 )]
+position = Vector2( 705.288, 147.171 )
+
+[node name="StaticBody2D2" parent="Stone-Long5" instance=ExtResource( 3 )]
+position = Vector2( 849.078, 147.22 )
+
+[node name="Stone-Long6" type="Node2D" parent="."]
+position = Vector2( -945.001, -251.52 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" parent="Stone-Long6" instance=ExtResource( 3 )]
+position = Vector2( 705.288, 147.171 )
+
+[node name="StaticBody2D2" parent="Stone-Long6" instance=ExtResource( 3 )]
+position = Vector2( 849.078, 147.22 )
+
+[node name="Stone-Long7" type="Node2D" parent="."]
+position = Vector2( -630, -343.02 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" parent="Stone-Long7" instance=ExtResource( 3 )]
+position = Vector2( 705.288, 147.171 )
+
+[node name="StaticBody2D2" parent="Stone-Long7" instance=ExtResource( 3 )]
+position = Vector2( 849.078, 147.22 )
+
 [node name="Stone-Long2" type="Node2D" parent="."]
 position = Vector2( 362.671, 45.0528 )
 __meta__ = {
@@ -92,21 +139,10 @@ position = Vector2( 849.078, 147.22 )
 position = Vector2( 213.777, 149.416 )
 
 [node name="Well" parent="Env-Infront" instance=ExtResource( 4 )]
+position = Vector2( -1.25436, 8.15335 )
 
 [node name="StaticBody2D" parent="Env-Infront" instance=ExtResource( 8 )]
 position = Vector2( 261.218, 11.5163 )
 
 [node name="DarkKnight" parent="." instance=ExtResource( 6 )]
-position = Vector2( 785.388, 144.501 )
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1.1, 1 )
-motion_mirroring = Vector2( 900, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( -112.329, -243.217 )
-scale = Vector2( 0.476118, 0.476118 )
-texture = ExtResource( 9 )
-centered = false
+position = Vector2( 340.565, 141.516 )
